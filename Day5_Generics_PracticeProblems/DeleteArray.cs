@@ -8,33 +8,13 @@ namespace Day5_Generics_PracticeProblems
 {
     class DeleteArray
     {
-        public static int[] DeleteMethod(int[] array, int elementToDelete)
+        public static T[] DeleteMethod<T>(T[] array, T elementToDelete)
         {
             int count = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (array[i] == elementToDelete)
-                {
-                    count++;
-                }
-                else if (count > 0)
-                {
-                    array[i - count] = array[i];
-                }
-            }
-            int[] newArray = new int[array.Length - count];
-            Array.Copy(array, newArray, newArray.Length);
-            return newArray;
-        }
-
-        public static double[] DeleteMethod(double[] array, double elementToDelete)
-        {
-            int count = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == elementToDelete)
+                if (EqualityComparer<T>.Default.Equals(array[i], elementToDelete))
                 {
                     count++;
                 }
@@ -44,28 +24,7 @@ namespace Day5_Generics_PracticeProblems
                 }
             }
 
-            double[] newArray = new double[array.Length - count];
-            Array.Copy(array, newArray, newArray.Length);
-            return newArray;
-        }
-
-        public static char[] DeleteMethod(char[] array, char elementToDelete)
-        {
-            int count = 0;
-
-            for (int i = 0; i < array.Length; i++)
-            {
-                if (array[i] == elementToDelete)
-                {
-                    count++;
-                }
-                else if (count > 0)
-                {
-                    array[i - count] = array[i];
-                }
-            }
-
-            char[] newArray = new char[array.Length - count];
+            T[] newArray = new T[array.Length - count];
             Array.Copy(array, newArray, newArray.Length);
             return newArray;
         }
