@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace Day5_Generics_PracticeProblems
 {
-    class DeleteArray
+    public class DeleteArray<T>
     {
-        public static T[] DeleteMethod<T>(T[] array, T elementToDelete)
+        public T[] DeleteMethod(T[] array, T elementToDelete)
         {
             int count = 0;
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (EqualityComparer<T>.Default.Equals(array[i], elementToDelete))
+                if (Equals(array[i], elementToDelete))
                 {
                     count++;
                 }

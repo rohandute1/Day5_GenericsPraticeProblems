@@ -32,7 +32,8 @@ namespace Day5_Generics_PracticeProblems
 
                     Console.WriteLine("Enter the element to delete from integer array:");
                     int elementToDeleteInt = int.Parse(Console.ReadLine());
-                    int[] updatedIntArray = DeleteArray.DeleteMethod(intArray, elementToDeleteInt);
+                    DeleteArray<int> intDeleteArray = new DeleteArray<int>();
+                    int[] updatedIntArray = intDeleteArray.DeleteMethod(intArray, elementToDeleteInt);
 
                     Console.WriteLine("Updated Integer Array:");
                     foreach (var item in updatedIntArray)
@@ -51,7 +52,8 @@ namespace Day5_Generics_PracticeProblems
 
                     Console.WriteLine("Enter the element to delete from double array:");
                     double elementToDeleteDouble = double.Parse(Console.ReadLine());
-                    double[] updatedDoubleArray = DeleteArray.DeleteMethod(doubleArray, elementToDeleteDouble);
+                    DeleteArray<double> doubleDeleteArray = new DeleteArray<double>();
+                    double[] updatedDoubleArray = doubleDeleteArray.DeleteMethod(doubleArray, elementToDeleteDouble);
 
                     Console.WriteLine("\nUpdated Double Array:");
                     foreach (var item in updatedDoubleArray)
@@ -70,7 +72,8 @@ namespace Day5_Generics_PracticeProblems
 
                     Console.WriteLine("Enter the element to delete from character array:");
                     char elementToDeleteChar = char.Parse(Console.ReadLine());
-                    char[] updatedCharArray = DeleteArray.DeleteMethod(charArray, elementToDeleteChar);
+                    DeleteArray<char> charDeleteArray = new DeleteArray<char>();
+                    char[] updatedCharArray = charDeleteArray.DeleteMethod(charArray, elementToDeleteChar);
 
                     Console.WriteLine("\nUpdated Character Array:");
                     foreach (var item in updatedCharArray)
