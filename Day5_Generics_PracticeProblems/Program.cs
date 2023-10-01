@@ -12,8 +12,8 @@ namespace Day5_Generics_PracticeProblems
         {
             Console.WriteLine("Welcome to Generics Problems.");
             Console.WriteLine("Please choose program to perform:");
-            Console.WriteLine("1.Delete array element using generics or non generics\n2.Find Minimum of 3 integers\n" +
-                "3.Find Minimum of 3 float values\n4.Find Minimum of 3 string values");
+            Console.WriteLine("1.Delete array element using generics or non generics\n2.Find Minimum of 3 integers using generics method\n" +
+                "3.Find Minimum of 3 float values using generics method\n4.Find Minimum of 3 string values using generics method");
             int select = Convert.ToInt32(Console.ReadLine());
 
             switch (select)
@@ -101,7 +101,7 @@ namespace Day5_Generics_PracticeProblems
                     int num2 = int.Parse(Console.ReadLine());
                     int num3 = int.Parse(Console.ReadLine());
 
-                    FindMinOfThree minFinder = new FindMinOfThree();
+                    FindMinOfThree<int> minFinder = new FindMinOfThree<int>();
                     int min = minFinder.FindMin(num1, num2, num3);
 
                     Console.WriteLine("The minimum number is: " + min);
@@ -114,7 +114,7 @@ namespace Day5_Generics_PracticeProblems
                     float float2 = float.Parse(Console.ReadLine());
                     float float3 = float.Parse(Console.ReadLine());
 
-                    FindMinOfThree minFloatFinder = new FindMinOfThree();
+                    FindMinOfThree<float> minFloatFinder = new FindMinOfThree<float>();
                     float minF = minFloatFinder.FindMin(float1, float2, float3);
 
                     Console.WriteLine("The minimum number is: " + minF);
@@ -127,7 +127,7 @@ namespace Day5_Generics_PracticeProblems
                     string str2 = Console.ReadLine();
                     string str3 = Console.ReadLine();
 
-                    FindMinOfThree minStringFinder = new FindMinOfThree();
+                    FindMinOfThree<string> minStringFinder = new FindMinOfThree<string>();
                     string minS = minStringFinder.FindMin(str1, str2, str3);
 
                     Console.WriteLine("The minimum string is: " + minS);

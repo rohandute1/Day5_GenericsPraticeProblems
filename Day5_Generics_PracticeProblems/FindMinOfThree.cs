@@ -6,84 +6,32 @@ using System.Threading.Tasks;
 
 namespace Day5_Generics_PracticeProblems
 {
-    class FindMinOfThree
+    class FindMinOfThree <T> where T : IComparable<T>
     {
-        public int FindMin(int num1, int num2, int num3)
+        public T FindMin(T Value1, T Value2, T Value3)
         {
-            if (num1.CompareTo(num2) <= 0)
+            if (Value1.CompareTo(Value2) <= 0)
             {
-                if (num1.CompareTo(num3) <= 0)
+                if (Value1.CompareTo(Value3) <= 0)
                 {
-                    return num1;
+                    return Value1;
                 }
                 else
                 {
-                    return num3;
+                    return Value3;
                 }
             }
             else
             {
-                if (num2.CompareTo(num3) <= 0)
+                if (Value2.CompareTo(Value3) <= 0)
                 {
-                    return num2;
+                    return Value2;
                 }
                 else
                 {
-                    return num3;
+                    return Value3;
                 }
             }
         }
-        public float FindMin(float num1, float num2, float num3)
-        {
-            if (num1.CompareTo(num2) <= 0)
-            {
-                if (num1.CompareTo(num3) <= 0)
-                {
-                    return num1;
-                }
-                else
-                {
-                    return num3;
-                }
-            }
-            else
-            {
-                if (num2.CompareTo(num3) <= 0)
-                {
-                    return num2;
-                }
-                else
-                {
-                    return num3;
-                }
-            }
-        }
-
-        public string FindMin(string str1, string str2, string str3)
-        {
-            if (str1.CompareTo(str2) <= 0)
-            {
-                if (str1.CompareTo(str3) <= 0)
-                {
-                    return str1;
-                }
-                else
-                {
-                    return str3;
-                }
-            }
-            else
-            {
-                if (str2.CompareTo(str3) <= 0)
-                {
-                    return str2;
-                }
-                else
-                {
-                    return str3;
-                }
-            }
-        }
-
     }
 }
