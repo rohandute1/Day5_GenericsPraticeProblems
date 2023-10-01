@@ -6,32 +6,54 @@ using System.Threading.Tasks;
 
 namespace Day5_Generics_PracticeProblems
 {
-    class FindMinOfThree <T> where T : IComparable<T>
+    class FindMinOfThree<T> where T : IComparable
     {
-        public T FindMin(T Value1, T Value2, T Value3)
+        public T var1;
+        public T var2;
+        public T var3;
+
+        public FindMinOfThree(T var1, T var2, T var3)
         {
-            if (Value1.CompareTo(Value2) <= 0)
+            this.var1 = var1;
+            this.var2 = var2;
+            this.var3 = var3;
+        }
+
+        public T FindMin()
+        {
+            return Minimum(var1, var2, var3);
+        }
+
+        public static T Minimum(T a, T b, T c)
+        {
+            if (a.CompareTo(b) <= 0)
             {
-                if (Value1.CompareTo(Value3) <= 0)
+                if (a.CompareTo(c) <= 0)
                 {
-                    return Value1;
+                    return a;
                 }
                 else
                 {
-                    return Value3;
+                    return c;
                 }
             }
             else
             {
-                if (Value2.CompareTo(Value3) <= 0)
+                if (b.CompareTo(c) <= 0)
                 {
-                    return Value2;
+                    return b;
                 }
                 else
                 {
-                    return Value3;
+                    return c;
                 }
             }
+        }
+
+        public void TestMinimum()
+        {
+            T min = Minimum(var1, var2, var3);
+            Console.WriteLine("The minimum is: " + min);
         }
     }
 }
