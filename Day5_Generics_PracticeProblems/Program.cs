@@ -12,7 +12,8 @@ namespace Day5_Generics_PracticeProblems
         {
             Console.WriteLine("Welcome to Generics Problems.");
             Console.WriteLine("Please choose program to perform:");
-            Console.WriteLine("1.Delete array element using generics or non generics\n2.Find Minimum of 3 integers\n3.Find Minimum of 3 float values");
+            Console.WriteLine("1.Delete array element using generics or non generics\n2.Find Minimum of 3 integers\n" +
+                "3.Find Minimum of 3 float values\n4.Find Minimum of 3 string values");
             int select = Convert.ToInt32(Console.ReadLine());
 
             switch (select)
@@ -117,6 +118,19 @@ namespace Day5_Generics_PracticeProblems
                     float minF = minFloatFinder.FindMin(float1, float2, float3);
 
                     Console.WriteLine("The minimum number is: " + minF);
+                    break;
+
+                case 4:
+                    Console.WriteLine("Enter three strings:");
+
+                    string str1 = Console.ReadLine();
+                    string str2 = Console.ReadLine();
+                    string str3 = Console.ReadLine();
+
+                    FindMinOfThree minStringFinder = new FindMinOfThree();
+                    string minS = minStringFinder.FindMin(str1, str2, str3);
+
+                    Console.WriteLine("The minimum string is: " + minS);
                     break;
 
             }
